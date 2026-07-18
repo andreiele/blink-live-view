@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Personal Blink login/session data and camera choice - never commit these.
+credentials.json
+config.json
+
+blink-live.log
