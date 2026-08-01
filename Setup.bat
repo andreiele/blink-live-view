@@ -6,6 +6,16 @@ echo Blink Live View - Setup
 echo =======================
 echo.
 
+where ffplay >nul 2>nul
+if errorlevel 1 (
+  echo WARNING: ffplay was not found on your PATH.
+  echo Blink Live View needs FFmpeg to actually play the video stream.
+  echo Install it from https://ffmpeg.org/download.html or run: winget install ffmpeg
+  echo You can finish this setup ^(sign-in, camera pick^) without it, but Run.bat
+  echo will fail to show video until ffplay is installed and on your PATH.
+  echo.
+)
+
 if not exist ".venv\Scripts\python.exe" (
   echo Creating virtual environment...
   where py >nul 2>nul
